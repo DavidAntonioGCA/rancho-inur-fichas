@@ -1,0 +1,37 @@
+:root{--azul:#2E75B6;--azul-claro:#9DC3E6;--rojo:#C00000;--rosa:#F8CBAD;--borde:#1f1f1f;--texto:#111;--fondo:#f3f5f8;--tarjeta:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Calibri,Carlito,"Segoe UI",Arial,sans-serif;color:var(--texto);background:var(--fondo);font-size:17px;line-height:1.35}
+.envoltura{max-width:980px;margin:0 auto;padding:16px}
+header.marca{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+header.marca img{width:56px;height:56px;border-radius:50%;background:#fff}
+header.marca .t{font-weight:700;font-size:20px}
+header.marca .s{font-size:14px;color:#444}
+.tarjeta{background:var(--tarjeta);border:1px solid #cfd6df;border-radius:10px;padding:18px}
+.homoclave{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.homoclave .et{font-weight:700}
+.homoclave .id{border:2px solid var(--borde);padding:4px 22px;font-weight:700;font-size:21px;letter-spacing:.5px;background:#fff}
+.estado{margin-left:auto;font-weight:700;padding:4px 12px;border-radius:999px;font-size:15px}
+.estado.sano{background:#e2f0d9;color:#375623}
+.estado.enfermo{background:var(--rojo);color:#fff}
+.cuerpo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"tabla foto" "tabla clin";grid-template-rows:auto 1fr;gap:18px;align-items:start}
+table.car{grid-area:tabla}.foto{grid-area:foto}.clinico{grid-area:clin}
+table.car{width:100%;border-collapse:collapse;font-size:17px}
+table.car caption{background:var(--azul);color:#fff;font-weight:700;padding:6px;caption-side:top}
+table.car td{border:1px solid var(--borde);padding:7px 8px;text-align:center}
+table.car tr:nth-child(odd) td{background:var(--azul-claro)}
+table.car td:first-child{width:55%}
+img.foto{width:100%;height:auto;display:block;border-radius:4px}
+.clinico{border:1px solid var(--borde)}
+.clinico h2{margin:0;background:var(--rojo);color:#fff;font-size:16px;text-align:center;padding:7px}
+.clinico .fila{display:grid;grid-template-columns:130px 1fr;border-top:1px solid var(--borde)}
+.clinico .fila div{padding:10px;display:flex;align-items:center}
+.clinico .fila div:first-child{background:var(--azul-claro);font-weight:700;justify-content:center;text-align:center;border-right:1px solid var(--borde)}
+.clinico .fila div:last-child{background:var(--rosa);justify-content:center;text-align:center}
+nav.pie{margin-top:16px;font-size:15px}
+nav.pie a{color:#0563C1}
+.indice h2{margin:22px 0 8px}
+.indice .lista{display:flex;flex-wrap:wrap;gap:6px}
+.indice a{display:inline-block;padding:5px 9px;border:1px solid #cfd6df;border-radius:6px;background:#fff;color:#0563C1;text-decoration:none;font-size:15px}
+.indice a.enf{border-color:var(--rojo);color:var(--rojo);font-weight:700}
+input#buscar{width:100%;padding:10px 12px;font-size:17px;border:1px solid #9aa5b1;border-radius:8px}
+@media (max-width:700px){.cuerpo{grid-template-columns:1fr;grid-template-areas:"foto" "tabla" "clin";grid-template-rows:auto}.clinico .fila{grid-template-columns:1fr}.clinico .fila div:first-child{border-right:0;border-bottom:1px solid var(--borde);padding:6px}}
